@@ -1,0 +1,72 @@
+[
+  {
+    "function": "build_delta_table",
+    "lean_cell": 12,
+    "ast_identical": true
+  },
+  {
+    "function": "add_aurora_measurement_context",
+    "lean_cell": 17,
+    "ast_identical": true
+  },
+  {
+    "function": "normalized_conditional_mi",
+    "lean_cell": 20,
+    "ast_identical": true
+  },
+  {
+    "function": "make_model_v17",
+    "lean_cell": 23,
+    "ast_identical": true
+  },
+  {
+    "function": "abl_weights",
+    "lean_cell": 23,
+    "ast_identical": true
+  },
+  {
+    "function": "abl_rank",
+    "lean_cell": 23,
+    "ast_identical": true
+  },
+  {
+    "function": "abl_gate_search",
+    "lean_cell": 23,
+    "ast_identical": true
+  },
+  {
+    "function": "abl_fit_gate",
+    "lean_cell": 23,
+    "ast_identical": true
+  },
+  {
+    "function": "abl_apply_gate",
+    "lean_cell": 23,
+    "ast_identical": true
+  },
+  {
+    "function": "v26_build_calibration_dose",
+    "lean_cell": 35,
+    "ast_identical": true
+  },
+  {
+    "function": "v26_prepare_dose",
+    "lean_cell": 35,
+    "ast_identical": true
+  },
+  {
+    "function": "v26_row_key",
+    "lean_cell": 35,
+    "ast_identical": true
+  },
+  {
+    "function": "v26_participant_folds",
+    "lean_cell": 38,
+    "ast_identical": true
+  },
+  {
+    "function": "v26_core_features",
+    "lean_cell": 38,
+    "ast_identical": true
+  }
+]

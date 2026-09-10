@@ -1,0 +1,18 @@
+[
+  {
+    "filename": "AVCT_Aurora_LEAN_V26_V28_V29_V30.ipynb",
+    "original_sha256": "ad4a74985739f03572431cd227b890f61b4dd18a576ffb3872918066c0d8a94c",
+    "sanitized_sha256": "6e1e9f6d16b5b4930b19f0809cbdf6ee4f5cf1f07490180e1728060249234931",
+    "cells": 52,
+    "output_blocks_removed": 109,
+    "source_text_unchanged": true
+  },
+  {
+    "filename": "AVCT_Monk_Skin_Tone_Test_Aurora_PCAVCT_Sub5_Target.ipynb",
+    "original_sha256": "c98bf1eb0251cc09668dd41b9432cd4f3a17b574ea065c91cadaea1cfec1fe15",
+    "sanitized_sha256": "c6171669f407c05811d5b96e2c2ceabfd54ec361a47dd60bf06d5e91d2245b78",
+    "cells": 36,
+    "output_blocks_removed": 65,
+    "source_text_unchanged": true
+  }
+]

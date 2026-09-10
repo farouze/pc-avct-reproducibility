@@ -1,0 +1,8 @@
+{
+  "feature_rows": 11427,
+  "sampling_rate_matched": 11427,
+  "fs_min": 499.99999999999994,
+  "fs_max": 500.0000000000176,
+  "CSI_max_residual": 2.220446049250313e-16,
+  "timestamp_audit_sha256": "2ba439b49b181a59c0501a40fc49b77f96147fc25f3ec1ac135d22532fac45d2"
+}

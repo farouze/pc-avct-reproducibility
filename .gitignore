@@ -1,0 +1,26 @@
+# Restricted inputs and individual-level outputs must never be committed.
+/data/*
+!/data/README.md
+/runs/
+/private/
+*.csv
+*.tsv
+*.parquet
+*.h5
+*.mat
+*.zip
+*.pkl
+*.joblib
+.env
+.env.*
+*.pem
+*.key
+__pycache__/
+*.py[cod]
+.venv/
+.ipynb_checkpoints/
+.DS_Store
+.pytest_cache/
+*.egg-info/
+build/
+dist/

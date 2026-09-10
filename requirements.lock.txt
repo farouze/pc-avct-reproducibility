@@ -1,0 +1,9 @@
+# V38 reference environment: Python 3.11.4
+numpy==1.24.3
+pandas==1.5.3
+scipy==1.10.1
+scikit-learn==1.3.0
+matplotlib==3.7.1
+h5py==3.11.0
+joblib==1.2.0
+threadpoolctl==2.2.0

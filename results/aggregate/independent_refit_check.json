@@ -1,0 +1,12 @@
+[
+  {
+    "target": "sbp",
+    "max_prediction_difference": 2.842170943040401e-14,
+    "rows": 1579
+  },
+  {
+    "target": "dbp",
+    "max_prediction_difference": 1.4210854715202004e-14,
+    "rows": 1579
+  }
+]

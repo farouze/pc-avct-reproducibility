@@ -1,0 +1,17 @@
+{
+  "python": "3.11.4",
+  "numpy": "1.24.3",
+  "pandas": "1.5.3",
+  "scipy": "1.10.1",
+  "sklearn": "1.3.0",
+  "participants": 653,
+  "rows": 7879,
+  "repeats": 3,
+  "folds": 5,
+  "seed": 42,
+  "input_sha256": {
+    "aurora_raw_avct_features.csv": "d77796b08cee3c4cd0ebcdd60ca16994658b320104401621ea9786fd890931ee",
+    "uci_pc_features.csv": "b62bc7b500fa851e3a282cd7f9d4081ee8b02b951079f8a33a79d32d8da8e648"
+  },
+  "scope": "Full model-analysis rerun from cached feature banks; waveform extraction not rerun"
+}
