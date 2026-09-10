@@ -62,4 +62,16 @@ class ReproducibilityTests(unittest.TestCase):
         self.assertLess(sign_flip_pvalue(d,9999),.01)
         with self.assertRaises(ValueError):sign_flip_pvalue([1,np.nan])
 
+    def test_feature_family_aggregate_is_participant_free_and_complete(self):
+        path=ROOT/'results/aggregate/feature_family_ablation.json'
+        result=json.loads(path.read_text())
+        self.assertEqual(len(result['summary']),6)
+        self.assertEqual(len(result['contrasts']),4)
+        self.assertTrue(all(row['n']==653 for row in result['summary']))
+        self.assertNotIn('subject_id',path.read_text())
+        attractor=[row for row in result['contrasts']
+                   if row['contrast']=='attractor_vs_standard']
+        self.assertEqual(len(attractor),2)
+        self.assertTrue(all('paired_signflip_p_holm' in row for row in attractor))
+
 if __name__=='__main__':unittest.main()

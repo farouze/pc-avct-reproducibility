@@ -1,0 +1,141 @@
+{
+  "analysis": "Secondary matched feature-family ablation",
+  "scope": "Three repeats of five-fold participant CV on the strict AuroraBP cohort. Fixed feature families, estimator, weights, and training-stage gate; no UCI prior.",
+  "feature_families": {
+    "context": [
+      "context_optical_quality",
+      "context_posture_seated",
+      "context_activity_post_exercise"
+    ],
+    "standard_ppg": [
+      "sigma_m",
+      "skew_m",
+      "kurtosis_m",
+      "spectral_entropy",
+      "ppg_quality",
+      "pat_seconds"
+    ],
+    "nonlinear_attractor_augmentation": [
+      "sample_entropy",
+      "permutation_entropy",
+      "recurrence_rate",
+      "determinism",
+      "rqa_entropy",
+      "csi"
+    ]
+  },
+  "summary": [
+    {
+      "target": "sbp",
+      "arm": "context_only",
+      "n": 653,
+      "mae": 7.919897045742894,
+      "ci95": [
+        7.607301010074094,
+        8.256488877883413
+      ]
+    },
+    {
+      "target": "sbp",
+      "arm": "standard_ppg",
+      "n": 653,
+      "mae": 7.733328040666905,
+      "ci95": [
+        7.441145731535784,
+        8.048296323100688
+      ]
+    },
+    {
+      "target": "sbp",
+      "arm": "attractor_augmented",
+      "n": 653,
+      "mae": 7.708776776291226,
+      "ci95": [
+        7.417964453488224,
+        8.017179054767785
+      ]
+    },
+    {
+      "target": "dbp",
+      "arm": "context_only",
+      "n": 653,
+      "mae": 6.317793793185857,
+      "ci95": [
+        6.0668484695012515,
+        6.5888000443974075
+      ]
+    },
+    {
+      "target": "dbp",
+      "arm": "standard_ppg",
+      "n": 653,
+      "mae": 6.137317116563185,
+      "ci95": [
+        5.89821221256422,
+        6.387781773595025
+      ]
+    },
+    {
+      "target": "dbp",
+      "arm": "attractor_augmented",
+      "n": 653,
+      "mae": 6.127834859899242,
+      "ci95": [
+        5.887301695104051,
+        6.384324416938362
+      ]
+    }
+  ],
+  "contrasts": [
+    {
+      "target": "sbp",
+      "contrast": "standard_ppg_vs_context",
+      "n": 653,
+      "gain": 0.18656900507598764,
+      "ci95": [
+        0.08786938074497636,
+        0.2855538085460801
+      ],
+      "paired_signflip_p": 0.00021,
+      "paired_t_p": 0.00021822308459053827
+    },
+    {
+      "target": "sbp",
+      "contrast": "attractor_vs_standard",
+      "n": 653,
+      "gain": 0.02455126437567916,
+      "ci95": [
+        -0.017750833975083626,
+        0.06868343447802552
+      ],
+      "paired_signflip_p": 0.26585,
+      "paired_t_p": 0.26679004540659085,
+      "paired_signflip_p_holm": 0.5317
+    },
+    {
+      "target": "dbp",
+      "contrast": "standard_ppg_vs_context",
+      "n": 653,
+      "gain": 0.18047667662267217,
+      "ci95": [
+        0.09612451172185241,
+        0.2661110638441814
+      ],
+      "paired_signflip_p": 4e-05,
+      "paired_t_p": 3.916622993492836e-05
+    },
+    {
+      "target": "dbp",
+      "contrast": "attractor_vs_standard",
+      "n": 653,
+      "gain": 0.009482256663943209,
+      "ci95": [
+        -0.03251361617391327,
+        0.050187951739584714
+      ],
+      "paired_signflip_p": 0.66157,
+      "paired_t_p": 0.6594941823912794,
+      "paired_signflip_p_holm": 0.66157
+    }
+  ]
+}
