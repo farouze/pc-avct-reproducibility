@@ -45,6 +45,6 @@ The UCI prior uses corrected features and was selected in 26 of 30 endpoint/fold
 
 ## Citation, archival release and reuse
 
-[CITATION.cff](CITATION.cff) records the authors and version. A GitHub repository URL is not a DOI. No software DOI has been assigned or invented. Connect a real archival release (for example, Zenodo) and add its issued DOI before citing it in the paper. See [release checklist](docs/RELEASE.md).
+[CITATION.cff](CITATION.cff) records the authors and version. Both authors approved the revised manuscript and public release of this repository on 2026-09-10. A GitHub repository URL is not a DOI. No software DOI has been assigned or invented. Connect a real archival release (for example, Zenodo) and add its issued DOI before citing it in the paper. See [release checklist](docs/RELEASE.md).
 
 No open-source license has been selected on behalf of both authors. Until they choose one, this repository does not grant an explicit reuse license. Third-party datasets retain their own access and licensing conditions.
