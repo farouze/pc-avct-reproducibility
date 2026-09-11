@@ -150,6 +150,30 @@ Strict-endpoint scored rows & 7{,}879 \\
 Four secondary sources appear in the development notebooks: BIDMC (53 subjects; 1{,}272 windows) \cite{bidmcDataset,pimentel2017,physionet2000}, sampled MIMIC-II (1{,}500 windows) \cite{mimicii2011,mimiciiDataset}, Welltory-PPG (106 windows) \cite{welltory2021}, and UCI (425 records; 3{,}268 windows) \cite{uciCufflessDataset,kachuee2015}. BIDMC, MIMIC-II, and Welltory form a historical corrected-feature PCA bank; the primary candidate list does not include those PCA coordinates. UCI trains the BP-change prior that can enter the primary model. Synthetic pigmentation ranks on these auxiliary sources are simulation inputs, not measured participant traits, and support no equity claim.
 
 Two additional datasets are used for independent follow-up analyses. The \textbf{Appel--Theart Participant Study Data} provide paired visible and infrared PPG, Monk Skin Tone (MST), and repeated pulse-rate references for 110 participant folders \cite{appel2025ppg}. After waveform and metadata auditing, 108 participants contributed 630 analyzable pulse-rate windows, including 24 participants with MST~7--10. Each participant has only one cuff BP value; consequently BP analysis on this dataset is explicitly cross-sectional and does not test calibration tracking. \textbf{VitalDB} contains synchronized intraoperative waveforms and clinical tracks from 6{,}388 cases \cite{lee2022vitaldb,vitaldbDataset}. The first 60 deterministic eligible-case positions yielded 55 development subjects. The next 240 positions yielded 228 eligible cases from 227 disjoint held-out subjects and 5{,}472 future windows after waveform/reference quality control. One held-out subject contributed two cases; each eligible case contributed 24 scored windows. Subject identities do not overlap development and holdout, and all cases belonging to a subject are grouped for inference. Only \texttt{SNUADC/PLETH}, \texttt{Solar8000/ART\_SBP}, and \texttt{Solar8000/ART\_DBP} were requested; ECG was neither loaded nor used. VitalDB has no skin-tone field. It evaluates future-window tracking within a separately developed intraoperative implementation, not pigmentation fairness or transfer of AuroraBP-fitted parameters.
+Table~\ref{tab:datasetsummary} consolidates the analysis sample, role, and source references for every dataset used in the study.
+\begin{table*}[t]
+\centering
+\caption{Datasets Used in PC-AVCT and Their References}
+\label{tab:datasetsummary}
+\scriptsize
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{>{\raggedright\arraybackslash}p{2.1cm}>{\raggedright\arraybackslash}p{3.4cm}>{\raggedright\arraybackslash}p{5.0cm}>{\raggedright\arraybackslash}p{5.6cm}}
+\toprule
+Dataset & Material analyzed & Role in this study & Source and access \\
+\midrule
+AuroraBP & 1{,}221 released participant records; 653 participants and 7{,}879 measurements in the strict primary endpoint & Primary session-calibrated BP evaluation, context arms, calibration dose, subgroup diagnostics, and feature-family ablation & Microsoft Research study and Zenodo dataset; available upon application under the provider's Data Use Agreement \cite{aurorabp2022,aurorabpDataset} \\
+BIDMC & 53 subjects; 1{,}272 windows & Historical corrected-feature PCA representation; not a primary evaluation cohort & BIDMC PPG and Respiration Dataset, PhysioNet \cite{bidmcDataset,pimentel2017,physionet2000} \\
+MIMIC-II & 1{,}500 sampled windows & Historical corrected-feature PCA representation; not a primary evaluation cohort & MIMIC-II Clinical Database, PhysioNet \cite{mimicii2011,mimiciiDataset,physionet2000} \\
+Welltory-PPG & 106 windows & Historical corrected-feature PCA representation; not a primary evaluation cohort & Published PPG signal collection \cite{welltory2021} \\
+UCI Cuff-Less BP & 425 records; 3{,}268 windows & Training source for the BP-change prior that may enter AuroraBP models & UCI Machine Learning Repository \cite{uciCufflessDataset,kachuee2015} \\
+Appel--Theart & 108 analyzed participants; 630 pulse-rate windows & Independent visible/infrared quality-fusion and guarded MST-correction analysis & Mendeley Data \cite{appel2025ppg} \\
+VitalDB & 55 development subjects; 228 held-out cases from 227 subjects; 5{,}472 scored future windows & Independent intraoperative calibration-plus-context and context-plus-PPG BP tracking & VitalDB and PhysioNet \cite{lee2022vitaldb,vitaldbDataset} \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.96\textwidth}
+\vspace{2pt}\footnotesize Counts describe the material used by this study and need not equal the full source repository. Auxiliary-source pigmentation ranks were synthetic simulation inputs; only AuroraBP supplied Fitzpatrick labels and Appel--Theart supplied Monk Skin Tone labels.
+\end{minipage}
+\end{table*}
 \subsection{Feature Extraction and Selection}
 \label{sec:features}
 AuroraBP features are extracted from the central 10-s optical window at $f_s=500$~Hz (5{,}000 samples), using a third-order 0.5--8~Hz bandpass, $d=4$, and $\tau=5$ samples (10~ms). The extractor calculates $f_s=(N-1)/(t_{N-1}-t_0)$ from the recording timestamps; all 11{,}427 cached feature rows match the timestamp audit at 500~Hz within $2\times10^{-11}$~Hz. The central waveform is not resampled before filtering. Sample entropy uses order 2, a base standardized tolerance of 0.2, and at most 600 samples; permutation entropy uses order 3. Recurrence analysis uses at most 300 standardized embedded points, Chebyshev distance, a base radius of 0.2 modified by the noise ratio, and diagonal lines of length at least 2. For the filtered AuroraBP signal, let $S(f)$ be its Welch power spectral density, with 4-s Hann segments and 50\% overlap. The quality feature is

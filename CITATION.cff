@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "Please cite the versioned GitHub release of this software."
 title: "PC-AVCT: Context-Augmented, Session-Calibrated Blood Pressure Tracking from PPG"
-version: "38.1.0"
+version: "38.2.0"
 date-released: 2026-09-10
 repository-code: "https://github.com/farouze/pc-avct-reproducibility"
 authors:
