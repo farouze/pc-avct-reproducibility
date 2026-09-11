@@ -2,6 +2,8 @@
 
 Code and provenance for the V38 **model-analysis rerun** of PC-AVCT, with the two author-supplied development notebooks preserved as source-only copies. The reference analysis uses 653 AuroraBP participants, 7,879 strict-endpoint measurements, and three repeats of five-fold participant cross-validation.
 
+The submission files are separated into a 13-page [main manuscript](manuscript/PC_AVCT_Main_Manuscript_V38.pdf) and a 5-page [Supplementary Information document](manuscript/PC_AVCT_Supplementary_V38.pdf). The [combined audit version](manuscript/PC_AVCT_Reproduced_V38.pdf) is retained for continuity with earlier releases.
+
 The primary wearable-state results are 7.697 mmHg SBP and 6.139 mmHg DBP participant MAE. Paired gains over the shared model without added context are 0.436 and 0.126 mmHg, with Holm-adjusted paired sign-flip p values of 0.00002 and 0.00013. See [aggregate statistics](results/aggregate/statistics.json) for unrounded values and intervals.
 
 The secondary matched feature-family ablation uses the same 653-participant folds. Standard PPG descriptors improved over calibration, time, and wearable context by 0.187 mmHg SBP and 0.180 mmHg DBP. Adding the nonlinear/attractor family yielded a further 0.025 and 0.009 mmHg, with intervals spanning zero and Holm-adjusted p values of 0.532 and 0.662. See the [feature-family aggregate](results/aggregate/feature_family_ablation.json).
@@ -41,6 +43,10 @@ python scripts/check_release.py
 ```
 
 Tests cover calibration-block exclusion and dose construction, participant-disjoint folds, source-function provenance, and paired inference on controlled examples. The release check rejects notebook outputs, likely credentials, and tracked participant-data files. GitHub Actions runs these checks without restricted datasets. Passing CI does **not** mean the clinical analysis ran on GitHub.
+
+## Manuscript builds
+
+From the `manuscript/` directory, compile `main_manuscript.tex` for the submission manuscript, `supplementary.tex` for the separate Supplementary Information document, or `combined.tex` for the audit version containing both. Shared supplementary material is stored in `supplementary_content.tex`.
 
 ## Scope and interpretation
 
