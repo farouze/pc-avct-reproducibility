@@ -2,7 +2,7 @@
 
 Code and provenance for the V38 **model-analysis rerun** of PC-AVCT, with the two author-supplied development notebooks preserved as source-only copies. The reference analysis uses 653 AuroraBP participants, 7,879 strict-endpoint measurements, and three repeats of five-fold participant cross-validation.
 
-The submission files are separated into a 13-page [main manuscript](manuscript/PC_AVCT_Main_Manuscript_V38.pdf) and a 5-page [Supplementary Information document](manuscript/PC_AVCT_Supplementary_V38.pdf). The [combined audit version](manuscript/PC_AVCT_Reproduced_V38.pdf) is retained for continuity with earlier releases.
+The journal-ready *Physiological Measurement* files are a 27-page [main manuscript](manuscript/PC_AVCT_PMEA_Main_V38.pdf) and a 5-page [supplementary document](manuscript/PC_AVCT_PMEA_Supplementary_V38.pdf). A [combined reference copy](manuscript/PC_AVCT_PMEA_Combined_V38.pdf) is also provided. The earlier IEEE-style submission and audit files remain available for continuity.
 
 The primary wearable-state results are 7.697 mmHg SBP and 6.139 mmHg DBP participant MAE. Paired gains over the shared model without added context are 0.436 and 0.126 mmHg, with Holm-adjusted paired sign-flip p values of 0.00002 and 0.00013. See [aggregate statistics](results/aggregate/statistics.json) for unrounded values and intervals.
 
@@ -46,7 +46,7 @@ Tests cover calibration-block exclusion and dose construction, participant-disjo
 
 ## Manuscript builds
 
-From the `manuscript/` directory, compile `main_manuscript.tex` for the submission manuscript, `supplementary.tex` for the separate Supplementary Information document, or `combined.tex` for the audit version containing both. Shared supplementary material is stored in `supplementary_content.tex`.
+From the `manuscript/` directory, compile `pmea_main.tex` for the *Physiological Measurement* submission and `supplementary.tex` for its separate supplementary document. The PMEA main paper uses a structured 244-word abstract, an alphabetical author--date bibliography, and 7,791 words before the references. Shared supplementary material is stored in `supplementary_content.tex`. The earlier `main_manuscript.tex` and `combined.tex` entry points are retained for the IEEE-style and audit layouts.
 
 ## Scope and interpretation
 
@@ -56,6 +56,6 @@ The UCI prior uses corrected features and was selected in 26 of 30 endpoint/fold
 
 ## Citation, archival release and reuse
 
-[CITATION.cff](CITATION.cff) records the authors and version. Both authors approved the revised manuscript and public release of this repository on 2026-09-10. A GitHub repository URL is not a DOI. No software DOI has been assigned or invented. Connect a real archival release (for example, Zenodo) and add its issued DOI before citing it in the paper. See [release checklist](docs/RELEASE.md).
+[CITATION.cff](CITATION.cff) records the authors and version. Both authors approved the revised manuscript and public release of this repository. A GitHub repository URL is not a DOI. No software DOI has been assigned or invented. Connect a real archival release (for example, Zenodo) and add its issued DOI when available. See [release checklist](docs/RELEASE.md).
 
 No open-source license has been selected on behalf of both authors. Until they choose one, this repository does not grant an explicit reuse license. Third-party datasets retain their own access and licensing conditions.

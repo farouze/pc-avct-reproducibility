@@ -7,17 +7,22 @@
 \usepackage{algorithm}
 \usepackage{algorithmic}
 \usepackage{xcolor}
-\usepackage{cite}
+\usepackage[round,authoryear]{natbib}
+\let\cite\citep
 \usepackage{url}
 \usepackage{textcomp}
 \makeatletter
 \setlength{\@fptop}{0pt}
 \makeatother
 \begin{document}
-\title{Supplementary Information for ``PC-AVCT: Context-Augmented, Session-Calibrated Blood Pressure Tracking from PPG''}
+\title{Supplementary material}
 \author{Farouk~Ganiyu~Adewumi~and~Timothy~Oladunni}
 \maketitle
-\noindent This document contains implementation details, historical development analyses, negative results, clinical-standards context, and regenerated subgroup diagnostics supporting the main manuscript. Primary claims and conclusions are reported in the main manuscript.
+\noindent\textbf{Description.} Implementation details, historical analyses, negative results, clinical-standards context, subgroup diagnostics, and a comparison of representative cuffless blood-pressure studies.
+\par\medskip
+Primary claims and conclusions are reported in the main manuscript.
 \appendices
 \input{supplementary_content}
+\bibliographystyle{plainnat}
+\bibliography{references}
 \end{document}

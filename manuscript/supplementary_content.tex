@@ -209,3 +209,27 @@ Primary CV & SBP & V--VI (25) & 7.646 & [6.052, 9.471] \\
 \end{tabular}}
 \end{table*}
 These are exploratory marginal intervals. Differences in sample size, anchoring, and validation design prevent direct comparison between the two analysis blocks. In particular, the small V--VI samples do not establish parity or equivalence, irrespective of the ordering of the point estimates.
+
+\begin{table*}[t]
+\centering
+\caption{Representative Cuffless BP Studies}
+\label{tab:sota}
+\scriptsize
+\setlength{\tabcolsep}{3.2pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{>{\raggedright\arraybackslash}p{2.7cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{1.8cm}>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{2.0cm}>{\raggedright\arraybackslash}p{2.0cm}>{\raggedright\arraybackslash}p{3.2cm}}
+\toprule
+Method & Dataset (N) & Split & Calibration & SBP & DBP & Skin-tone report \\
+\midrule
+PPG2BP-Net \cite{ppg2bp2023} & Intraoperative (4{,}185 participants) & Participant-independent & Required & 0.209$\pm$7.509$^{\ast}$ & 0.150$\pm$4.549$^{\ast}$ & Not reported \\
+Calibration-free CV-dynamics \cite{calfree2023} & UCI/MIMIC-II (225 participants) & Participant-independent & None & 7.41 & 3.32 & Not reported \\
+Benchmark baseline \cite{bpbenchmark2023} & Four public PPG--BP datasets & Participant-level CV & Mixed & 15.60 (Sensors) & -- & Not reported; quantifies leakage inflation \\
+AVCT companion work \cite{avct2026} & Smartphone PPG & Single-point calibration & 1 reading & 2.05 & 1.67 & Not reported \\
+rPPG equity field study \cite{equity2026} & Nigeria, Fitzpatrick V/VI (306 enrolled; 249 analyzed) & Independent cuff reference & None & 15.4 & 10.9 & Fitzpatrick V/VI \\
+Wearable-state model (this study) & AuroraBP (653 participants) & 3$\times$5-fold participant CV & 3 readings & 7.697 [7.407, 8.008] & 6.139 [5.899, 6.391] & Fitzpatrick I--VI; V--VI underpowered \\
+Protocol-enriched upper bound & AuroraBP (653 participants) & Same internal CV & 3 readings & 7.523 [7.243, 7.815] & 5.743 [5.527, 5.977] & Protocol metadata limit transportability \\
+Context-plus-PPG holdout & VitalDB (227 held-out participants) & Locked participant holdout & 3 windows & 15.375 & 8.833 & Not available; temporal test only \\
+\bottomrule
+\multicolumn{7}{l}{\footnotesize $^{\ast}$ Mean error $\pm$ SD rather than MAE; not directly comparable with the other rows.}
+\end{tabular}
+\end{table*}
